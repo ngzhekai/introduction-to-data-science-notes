@@ -45,5 +45,23 @@ keras.Sequential([
 The reason behind this is due to SGD will shift the network weights in proportion to how large an activation the data produces. Where *features* that tend to produce activations of very different sizes can make for unstable training behavior.
 
 Therefore, it is good to normalize the data before it goes into the network, maybe also normalizing inside the network would be better! 
-.
+
 Here comes a special kind of layer that can do it, the **batch normalization layer**. This layer looks at each batch as it comes in, first normalizing the batch with its own *mean* and *standard deviation*, and then putting the data on a new scale with two trainable rescaling parameters.
+
+Most often, batch normalization layer acts as an aid to the optimization process (it can sometimes also help prediction performance). Models with *batchnorm* (batch normalization layer) tend to need fewer epochs (the number of complete passes throughthe training dataset) to complete training. Furthermore, it can also fix various problems that an cause the training to get "stuck". *If you are having trouble during training, consider adding batch normalization to your models.* 
+
+#### Adding Batch Normalization
+1. You can put if after a layer...
+
+``` python
+layers.Dense(16, activation='relu'),
+layers.BatchNormalization(),
+```
+
+2. ... or between a layer and its activation function:
+
+``` python
+layers.Dense(16),
+layers.BatchNormalization(),
+layers.Activation('relu'),
+```
