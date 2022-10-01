@@ -4,7 +4,9 @@
 It measures the disparity (great difference) between the target's true value and the value the model predicts. In short, it measures how good the network's predictions are.
 - Regression problems such as predicting the calories in *80 Cereals*, rating in *Red Wine Quality*.
 - **Mean absolute error (MAE)**, a common loss function used for regression problems.
-- The *mean absolute error* is the average length between the fitted curve and the data points.
+- ![](https://i.imgur.com/VDcvkZN.png)
+>The *mean absolute error* is the average length between the fitted curve and the data points.
+
 
 ## Stochastic Gradient Descent (SGD)
 An optimization algorithm often used in machine learning applications to find th emodel parameters that correspond to the best fit between predicted and the actual outputs.
