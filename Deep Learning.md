@@ -27,7 +27,7 @@ In return, it has to search for broad, general patterns, whose weight patterns t
 ![](https://i.imgur.com/a86utxY.gif)
 > 50% *dropout* has been added between the two hidden layers.
 
-### Adding Dropout
+#### Adding Dropout
 In *Keras*, the dropout rate argument `rate` defines what percentage of the input units to shut off. Put the `Dropout` layer just before the layer you want the dropout applied to:
 
 ``` python
@@ -38,3 +38,8 @@ keras.Sequential([
     # ...
 ])
 ```
+
+### Batch Normalization
+*Batch normalization* can help to correct training that is slow or unstable. In neural network, it's generally a good idea to put all of your data on a common scale (e.g. scikit-learns's *StandardScaler* or *MinMaxScaler*). 
+
+The reason behind this is due to SGD will shift the network weights in proportion to how large an activation the data produces. Where *features* that tend to produce activations of very different sizes can make for unstable training behavior.
