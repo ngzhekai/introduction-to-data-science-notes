@@ -25,5 +25,16 @@ The idea behind **dropout** is to break up these conspiracies. So, we randomly *
 In return, it has to search for broad, general patterns, whose weight patterns tend to be more robust (strong and unlikely to break or fail).
 
 ![](https://i.imgur.com/a86utxY.gif)
-> 50% dropout has been added between the two hidden layers.
+> 50% *dropout* has been added between the two hidden layers.
 
+### Adding Dropout
+In *Keras*, the dropout rate argument `rate` defines what percentage of the input units to shut off. Put the `Dropout` layer just before the layer you want the dropout applied to:
+
+``` python
+keras.Sequential([
+    # ...
+    layers.Dropout(rate=0.3), # apply 30% dropout to the next layer
+    layers.Dense(16),
+    # ...
+])
+```
