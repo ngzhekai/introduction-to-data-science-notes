@@ -18,6 +18,12 @@ An optimization algorithm often used in machine learning applications to find th
 ## Special Layers to Prevent Overfitting and Stabilize Training
 
 ### Dropout Layer
-Overfitting is caused by the network learning spurious (false and not what it appeas to be) patterns in the training data. To recognize these spurious patterns, a network will often rely on a very specific combinations of weight, a kind of *"conspiracy"* of weights. 
+Overfitting is caused by the network learning spurious (false and not what it appeas to be) patterns in the training data. To recognize these spurious patterns, a network will often rely on a very specific combinations of weight, a kind of *"conspiracy"* of weights. In more detailed, they tend to be fragile: as remove one of them the conspiracy falls apart.
+
+The idea behind **dropout** is to break up these conspiracies. So, we randomly *drop out* some fraction of a layer's input units every step of training, making it much harder for the network to learn those spurious (false and not what it appeas to be) patterns in the training data.
+
+In return, it has to search for broad, general patterns, whose weight patterns tend to be more robust (strong and unlikely to break or fail).
 
 ![](https://i.imgur.com/a86utxY.gif)
+> 50% dropout has been added between the two hidden layers.
+
