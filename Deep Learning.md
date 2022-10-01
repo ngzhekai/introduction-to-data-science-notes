@@ -41,5 +41,9 @@ keras.Sequential([
 
 ### Batch Normalization
 *Batch normalization* can help to correct training that is slow or unstable. In neural network, it's generally a good idea to put all of your data on a common scale (e.g. scikit-learns's *StandardScaler* or *MinMaxScaler*). 
-
+.
 The reason behind this is due to SGD will shift the network weights in proportion to how large an activation the data produces. Where *features* that tend to produce activations of very different sizes can make for unstable training behavior.
+.
+Therefore, it is good to normalize the data before it goes into the network, maybe also normalizing inside the network would be better! 
+.
+Here comes a special kind of layer that can do it, the **batch normalization layer**. This layer looks at each batch as it comes in, first normalizing the batch with its own *mean* and *standard deviation*, and then putting the data on a new scale with two trainable rescaling parameters.
