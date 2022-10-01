@@ -1,7 +1,7 @@
 # Introduction to Deep Learning
 
 ## The Loss Function
-It measures the disparity between the target's true value and the value the model predicts.
+It measures the disparity (great difference) between the target's true value and the value the model predicts.
 
 ## Stochastic Gradient Descent (SGD)
 An optimization algorithm often used in machine learning applications to find th emodel parameters that correspond to the best fit between predicted and the actual outputs.
