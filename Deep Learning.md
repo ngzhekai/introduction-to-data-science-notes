@@ -76,3 +76,20 @@ layers.Activation('relu'),
 ## Binary Classification
 
 Classification into one of two classes is a common machine learning problem. You might want to predict whether or not a customer is likely to make a purchase, whether or not a credit card transaction was fraudulent. These are all **binary classification** problems.
+
+In your raw data, the classes might be represented by strings like `"Yes"` and `"No"`, or `"Dog"` and `"Cat"`. Before using this data, let's assign a class label with one class having `0` and the other will be `1`. Assigning numeric labels puts the data in a form a neural network can use.
+
+### Accuracy and Cross-Entrophy
+
+**Accuracy** is one of themany metrics in use for measuring success on a classification problem. Accuracy is the ratio of correct predictions to total predictions: `accuracy = number_correct / total`.  
+
+The problem with accuracy (and most other classfication metrics) is that it cannot be used as a loss function. SGD requires a loss function that changes smoothly, yet accuracy, being a ration of counts, changes in "jumps". So, we have to choose a substitute to act as the loss function. This substitute is the *cross-entropy* function.
+
+### Sigmoid Function
+
+The cross-entrophy and accuracy functions both require probabilities as inputs, having numbers from 0 to 1. To convert the real-valued outputs produced by a dense layer into probabilities, we will have to attach a new kind of activation function, the **sigmoid activation**.
+
+![](https://i.imgur.com/FYbRvJo.png)
+> *The sigmoid function maps real numbers into the interval [0,1].*
+
+To get the final class prediction, will have to define a *threshold* probability. Which will be 0.5, therefore that rounding will give us the correct class: where below 0.5 means the class will label it with `0` and 0.5 or above means the class with label `1`. A 0.5 threshold is what Keras uses by default with its accuracy metric.
