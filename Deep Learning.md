@@ -72,3 +72,7 @@ layers.Dense(16),
 layers.BatchNormalization(),
 layers.Activation('relu'),
 ```
+
+## Binary Classification
+
+Classification into one of two classes is a common machine learning problem. You might want to predict whether or not a customer is likely to make a purchase, whether or not a credit card transaction was fraudulent. These are all **binary classification** problems.
